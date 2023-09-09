@@ -62,7 +62,11 @@ public class TechJobs {
                 String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
+//                    if (JobData.findByValue(searchTerm).equals("")){
+//                        System.out.println("NOOOOOO");
+//                    } else {
                     printJobs(JobData.findByValue(searchTerm));
+                    //}
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
                 }
@@ -119,16 +123,26 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-        for (HashMap<String, String> jobList : someJobs) {
-            System.out.println("\n*****");
-            for (Map.Entry<String, String> job : jobList.entrySet()) {
-                String key = job.getKey();
-                String value = job.getValue();
-                //System.out.println("\n" + "*****" +"\n");
-                System.out.println(key + " : " + value);
-                //System.out.println("\n *****");
+        if(someJobs.size() == 0) {
+//         for(HashMap<String, String> aJob : someJobs) {
+//             for(Map.Entry<String,String> noJob : aJob.entrySet()) {
+//                // if(noJob.getKey() == null) {
+            //ITS ALIVE!!!!---still needs to format so no space below no jobs message
+                     System.out.println("No JOBS!");
+                // }
+         } else {
+
+            for (HashMap<String, String> jobList : someJobs) {
+                System.out.println("\n*****");
+                for (Map.Entry<String, String> job : jobList.entrySet()) {
+                    String key = job.getKey();
+                    String value = job.getValue();
+                    //System.out.println("\n" + "*****" +"\n");
+                    System.out.println(key + " : " + value);
+                    //System.out.println("\n *****");
+                }
+                System.out.println("*****");
             }
-            System.out.println("*****");
         }
     }
 //        HashMap<String, String> jobRecord = new HashMap<>();

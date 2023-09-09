@@ -79,8 +79,13 @@ public class JobData {
                 jobs.add(row);
             }
         }
-
         return jobs;
+        //cannot work b/c method must return an arraylist of hashmaps
+//        if (jobs.size() > 0) {
+//            return jobs;
+//        } else {
+//            return noResults;
+//        }
     }
 
     /**
@@ -95,8 +100,15 @@ public class JobData {
         loadData();
 
         // TODO - implement this method
-        return null;
-    }
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+
+        for (HashMap<String, String> row : allJobs) {
+//turn hashmap into string representation, search for value, add hashmap to arraylist if value is found
+            if (row.toString().contains(value) /*&& !jobs.contains(row)*/){
+                jobs.add(row);
+            }
+        }
+        return jobs;    }
 
     /**
      * Read in data from a CSV file and store it in a list
