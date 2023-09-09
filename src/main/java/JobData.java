@@ -49,8 +49,16 @@ public class JobData {
 
         // load data, if not already loaded
         loadData();
+        //return a copy of allJobs to protect the data within allJobs ArrayList:
 
-        return allJobs;
+        //first tried .clone() but does not work b/c method must return ArrayList<HashMap<String, String>>
+        //and because it will not return elements themselves?
+        // Object copyOfAllJobs = allJobs.clone();
+
+        //then made empty arraylist of hashmaps and used .addall() method. success!
+        ArrayList<HashMap<String, String>> copyOfAllJobs = new ArrayList<>();
+        copyOfAllJobs.addAll(0, allJobs);
+        return copyOfAllJobs;
     }
 
     /**
