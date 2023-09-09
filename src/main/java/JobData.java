@@ -75,7 +75,8 @@ public class JobData {
 
             String aValue = row.get(column);
 
-            if (aValue.contains(value)) {
+            //made it case-insensitive by adding toUpperCase() method to aValue and to the search value.
+            if (aValue.toUpperCase().contains(value.toUpperCase())) {
                 jobs.add(row);
             }
         }
@@ -104,7 +105,7 @@ public class JobData {
 
         for (HashMap<String, String> row : allJobs) {
 //turn hashmap into string representation, search for value, add hashmap to arraylist if value is found
-            if (row.toString().contains(value) /*&& !jobs.contains(row)*/){
+            if (row.toString().toUpperCase().contains(value.toUpperCase()) /*&& !jobs.contains(row)*/){
                 jobs.add(row);
             }
         }

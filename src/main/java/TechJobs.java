@@ -127,8 +127,9 @@ public class TechJobs {
 //         for(HashMap<String, String> aJob : someJobs) {
 //             for(Map.Entry<String,String> noJob : aJob.entrySet()) {
 //                // if(noJob.getKey() == null) {
-            //ITS ALIVE!!!!---still needs to format so no space below no jobs message
-                     System.out.println("No JOBS!");
+            //ITS ALIVE!!!!---still needs to format so no space below no jobs message--all it takes
+            //is using System.out.print() instead of System.out.println.
+                     System.out.print("No Results");
                 // }
          } else {
 
@@ -138,17 +139,13 @@ public class TechJobs {
                     String key = job.getKey();
                     String value = job.getValue();
                     //System.out.println("\n" + "*****" +"\n");
-                    System.out.println(key + " : " + value);
+                    System.out.println(key + ": " + value);
                     //System.out.println("\n *****");
                 }
                 System.out.println("*****");
             }
         }
     }
-//        HashMap<String, String> jobRecord = new HashMap<>();
-//        for(int i = 0; i<someJobs.size(); i++) {
-//            jobRecord.put()
-//            //for(String butt : someJobs.toArray()[i])
-//            System.out.println(someJobs.toArray()[i]);
+
         }
 
